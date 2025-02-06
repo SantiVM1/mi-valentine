@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi Valentín?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: pink;
+            margin: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        h1 {
+            color: red;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .yes {
+            background-color: red;
+            color: white;
+        }
+        .no {
+            background-color: gray;
+            color: white;
+            position: absolute;
+        }
+        .valentine-img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+        }
+        #message {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://media.tenor.com/CNJSyzMIkskAAAAi/bubu-dudu-sseeyall.gif" alt="Oso con corazón" class="valentine-img">
+        <h1>¿Quieres ser mi Valentín?💗</h1>
+        <div class="buttons">
+            <button class="btn yes" onclick="aceptar()">Sí</button>
+            <button class="btn no" id="noBtn" onmouseover="moverNo()">No</button>
+        </div>
+        <div id="message"> te amo tanto, como no tienes idea💕</div>
+    </div>
+
+    <script>
+        function aceptar() {
+            document.getElementById("message").style.display = "block";
+        }
+
+        function moverNo() {
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            let noBtn = document.getElementById("noBtn");
+            noBtn.style.left = `${x}px`;
+            noBtn.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
